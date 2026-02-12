@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu Principal</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        background-color: #f1fff5;
+    }
+
+    /* HEADER */
+    header {
+        background-color: #52b788;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+    }
+
+    header h1 {
+        font-size: 20px;
+    }
+
+    /* MENU */
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+        color: #d8f3dc;
+    }
+
+    /* MENU MOBILE */
+    .menu-toggle {
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    /* CONTEÚDO */
+    .container {
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .card {
+        background: white;
+        padding: 30px;
+        margin: 20px auto;
+        max-width: 400px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .card h2 {
+        color: #2d6a4f;
+        margin-bottom: 10px;
+    }
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 768px) {
+        nav ul {
+            display: none;
+            flex-direction: column;
+            background-color: #52b788;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            padding: 20px;
+            border-radius: 0 0 0 10px;
+        }
+
+        nav ul.active {
+            display: flex;
+        }
+
+        .menu-toggle {
+            display: block;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>Meu Sistema</h1>
+    <span class="menu-toggle" onclick="toggleMenu()">☰</span>
+    <nav>
+        <ul id="menu">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Perfil</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Configurações</a></li>
+            <li><a href="login.html">Sair</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="container">
+    <div class="card">
+        <h2>Bem-vindo!</h2>
+        <p>Este é o menu principal do sistema.</p>
+    </div>
+</div>
+
+<script>
+    function toggleMenu() {
+        document.getElementById("menu").classList.toggle("active");
+    }
+</script>
+
+</body>
+</html>
